@@ -215,20 +215,18 @@ body {
   font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
   border-radius: 0;
-  padding: 12px 25px;
   opacity: 0.92;
 }
 
-.btn-primary:hover,
-.btn-primary:active {
+.btn-primary:hover {
   opacity: 1;
-  transform: scale(1.01);
 }
 
 .sale-block--button {
+  padding: 12px 25px;
+  font-size: 24px;
+  line-height: 29px;
   display: block;
   margin: 0 auto;
 }
@@ -236,6 +234,44 @@ body {
 .products-grid {
   display: flex;
   justify-content: space-between;
+  &__item {
+    position: relative;
+
+    &:hover &-overlay {
+      background-color: $color-overlay-bg;
+      border-color: transparent;
+    }
+    &:hover .products-grid__btn {
+      opacity: 1;
+    }
+    & + & {
+      margin-top: 15px;
+    }
+  }
+  &__item-overlay {
+    position: absolute;
+    height: 354px;
+    width: 341px;
+    padding-top: 265px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 3px solid;
+    border-color: #ffffff;
+    transition: opacity $transition-prop, background-color $transition-prop,
+      border-color $transition-prop;
+  }
+  &__btn {
+    opacity: 0;
+    font-size: 15px;
+    line-height: 17px;
+    padding: 12px 12px;
+    transition: opacity $transition-prop;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .products {

@@ -252,21 +252,18 @@ body {
   font-family: "Lato";
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
   border-radius: 0;
-  padding: 12px 25px;
   opacity: 0.92;
 }
 
-.btn-primary:hover,
-.btn-primary:active {
+.btn-primary:hover {
   opacity: 1;
-  -webkit-transform: scale(1.01);
-          transform: scale(1.01);
 }
 
 .sale-block--button {
+  padding: 12px 25px;
+  font-size: 24px;
+  line-height: 29px;
   display: block;
   margin: 0 auto;
 }
@@ -278,6 +275,45 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+.products-grid__item {
+  position: relative;
+}
+.products-grid__item:hover .products-grid__item-overlay {
+  background-color: rgba(0, 0, 0, 0.24);
+  border-color: transparent;
+}
+.products-grid__item:hover .products-grid__btn {
+  opacity: 1;
+}
+.products-grid__item + .products-grid__item {
+  margin-top: 15px;
+}
+.products-grid__item-overlay {
+  position: absolute;
+  height: 354px;
+  width: 341px;
+  padding-top: 265px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 3px solid;
+  border-color: #ffffff;
+  -webkit-transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+}
+.products-grid__btn {
+  opacity: 0;
+  font-size: 15px;
+  line-height: 17px;
+  padding: 12px 12px;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+}
+.products-grid__btn:hover {
+  cursor: pointer;
 }
 
 .products {
