@@ -22,8 +22,10 @@ body {
   margin: 0 auto;
   width: 100%;
   text-align: center;
+  outline: 1px dotted grey;
   @include for-size(desktop) {
-    width: 1290px;
+    padding: 0 75px;
+    width: 1440px;
   }
 }
 
@@ -232,63 +234,8 @@ body {
 }
 
 .products-grid {
-  @include wrapper;
   display: flex;
-}
-
-.title {
-  text-align: center;
-  position: relative;
-
-  &:before,
-  &:after {
-    content: '';
-    display: inline-block;
-    height: 1px;
-    width: 100%;
-    background-color: $color-light-gray;
-    position: relative;
-    top: -13px;
-  }
-
-  &:before {
-    right: 146px;
-    margin: 0 0 0 -100%;
-  }
-
-  &:after {
-    left: 146px;
-    margin: 0 -100% 0 0;
-  }
-
-  &__text {
-    color: $text_primary;
-    font-size: 29px;
-    line-height: 31px;
-    font-weight: 700;
-    display: inline-block;
-    position: relative;
-
-    &:after,
-    &:before {
-      content: '';
-      display: block;
-      width: 19px;
-      height: 19px;
-      background-color: $color_gold;
-      transform: rotate(-45deg);
-      position: absolute;
-      top: 8px;
-    }
-
-    &:before {
-      left: -96px;
-    }
-
-    &:after {
-      right: -96px;
-    }
-  }
+  justify-content: space-between;
 }
 
 .products {
@@ -299,44 +246,54 @@ body {
   }
 }
 
-.title1 {
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
-  width: 200px;
-  position: relative;
-  max-width: 300px;
+.title {
+  display: flex;
+  align-items: center;
   &::before,
   &::after {
     content: ' ';
-    position: absolute;
-    margin: 0 auto;
-    display: inline-block;
-    top: 50%;
-    width: 19px;
-    height: 19px;
-    background-color: $color_gold;
-    transform: translateY(-50%) rotate(45deg);
+    position: relative;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #eaeaea;
   }
   &::before {
-    left: -96px;
+    margin-right: 63px;
   }
   &::after {
-    right: -96px;
+    margin-left: 63px;
   }
-}
-
-.title__text1 {
-  &::before,
-  &::after {
-    content: ' ';
-    position: absolute;
-    margin: 0 auto;
+  &__text {
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    color: #000000;
     display: inline-block;
-    top: 50%;
-    width: 40px;
-    height: 1px;
-    background-color: $color_gold;
-    transform: translateY(-50%) rotate(45deg);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    padding: 0 90px;
+    max-width: 600px;
+    &::before,
+    &::after {
+      content: ' ';
+      position: absolute;
+      margin: 0 auto;
+      display: inline-block;
+      top: 50%;
+      width: 19px;
+      height: 19px;
+      background-color: $color_gold;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &::before {
+      left: 0em;
+    }
+    &::after {
+      right: 0em;
+    }
   }
 }
