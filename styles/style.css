@@ -355,10 +355,10 @@ body {
   cursor: pointer;
 }
 
-.products {
+.section {
   padding-top: 96px;
 }
-.products__title {
+.section__title {
   margin-bottom: 58px;
 }
 
