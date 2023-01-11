@@ -604,9 +604,12 @@ body {
   line-height: 14px;
   color: #fff;
   border: none;
+  border-radius: 0;
+  padding: 6px 36px 6px 8px;
   background-color: #000000;
   background-image: url(../images/down.svg);
-  max-width: 100px;
+  max-width: 90px;
+  cursor: pointer;
 }
 
 .form-select:active,
