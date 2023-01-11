@@ -120,7 +120,6 @@ body {
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  outline: 1px dotted grey;
 }
 @media screen and (min-width: 1280px) {
   .wrapper {
@@ -144,15 +143,24 @@ body {
   background-color: #f2f2f2;
   padding: 14px 0;
 }
-.header .top-header a {
+.header .top-header__phone {
+  font-size: 11px;
+}
+.header .top-header__link {
   text-decoration: none;
   color: #393939;
   font-size: 10px;
   display: inline-block;
-  padding: 4px;
+  padding: 0 15px;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out;
 }
-.header .top-header a:hover {
+.header .top-header__link:hover {
   color: #d9bf8f;
+  cursor: pointer;
+}
+.header .top-header__link:not(:last-child) {
+  border-right: 1px solid #393939;
 }
 .header .main-header__list {
   display: -webkit-box;
@@ -162,6 +170,18 @@ body {
   font-size: 18px;
   line-height: 22px;
   gap: 24px;
+}
+.header .main-header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header .main-header__link {
+  padding: 51px 0;
+}
+.header .main-header__link:hover {
+  color: #d9bf8f;
+  cursor: pointer;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -554,6 +574,12 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   color: #d9bf8f;
+  -webkit-transition: color 250ms ease-in-out, border 250ms ease-in-out;
+  transition: color 250ms ease-in-out, border 250ms ease-in-out;
+}
+.circle:hover {
+  border: 2px solid #393939;
+  color: #393939;
 }
 
 .socials {
@@ -561,4 +587,29 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 17px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 96px;
+}
+
+.form-select {
+  margin-left: 62px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fff;
+  border: none;
+  background-color: #000000;
+  background-image: url(../images/down.svg);
+  max-width: 100px;
+}
+
+.form-select:active,
+.form-select:focus {
+  outline: 4px solid #d9bf8f !important;
 }/*# sourceMappingURL=style.css.map */
