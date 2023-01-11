@@ -1,3 +1,5 @@
+@import 'reset';
+@import 'icon-font';
 @import 'variables';
 @import 'mixin';
 
@@ -9,9 +11,16 @@ p,
 h1,
 h2,
 h3,
-h4 {
+h4,
+ul {
   margin: 0;
   padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -22,7 +31,7 @@ body {
   margin: 0 auto;
   width: 100%;
   text-align: center;
-  // outline: 1px dotted grey;
+  outline: 1px dotted grey;
   @include for-size(desktop) {
     padding: 0 75px;
     width: 1440px;
@@ -30,11 +39,12 @@ body {
 }
 
 .header {
-  background-color: $color_lightgray;
-
-  .top-header {
-    padding: 14px 0;
+  &__wrapper {
     @include flexBox(space-between, center);
+  }
+  .top-header {
+    background-color: $color-lightgray;
+    padding: 14px 0;
 
     a {
       text-decoration: none;
@@ -46,6 +56,15 @@ body {
       &:hover {
         color: $color_gold;
       }
+    }
+  }
+  .main-header {
+    &__list {
+      display: flex;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+      gap: 24px;
     }
   }
 }
@@ -234,6 +253,13 @@ body {
 .products-grid {
   display: flex;
   justify-content: space-between;
+  &__column {
+    flex-basis: 400px;
+    &--wide {
+      flex-basis: 460px;
+    }
+  }
+
   &__item {
     position: relative;
 
